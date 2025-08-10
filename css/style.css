@@ -1,0 +1,362 @@
+/****************************/
+/* HEADER */
+/****************************/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fdf2e9;
+  align-items: center;
+  height: 9.2rem;
+  /* this is because we want the navigation to be sticky later */
+
+  padding: 0 4.8rem;
+  /* this is to give the gap between the edge and the content. */
+}
+.logo {
+  height: 2.2rem;
+  /* here we broke the rule a little bit since the 24px is too big and 16px is too small */
+}
+
+/****************************/
+/* NAVIGATION */
+/****************************/
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  display: inline-block;
+  border-radius: 9px;
+  padding: 1.2rem 2.4rem;
+  color: #fff;
+  background-color: #e67e22;
+}
+/* here we have increased the specificity from 2 to 3 */
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+  /* we do not need to add animation here since it is already there in the .main-nav-link selector */
+}
+
+/****************************/
+/* HERO SECTION */
+/****************************/
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  max-width: 130rem;
+  /* now we have specified its width and in the grid property the width of both the members of the hero class have same width that is 1fr, thus the widht of the text on the left will now reduce to 130rem. */
+  margin: 0 auto;
+
+  align-items: center;
+
+  gap: 9.6rem;
+  /* same space we added as the padding to the section-hero. */
+
+  padding: 0 3.2rem;
+  /*now after adding padding to this when we reduce the width of the viewport completely the image goes to absolutely no size*/
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-img {
+  width: 100%;
+  /* this makes the image resizable and its width reduces when we change the width of the viewport */
+}
+
+.delivered-meals {
+  display: flex;
+  gap: 2rem;
+  margin-top: 8rem;
+  align-items: center;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+  margin-right: 1.6rem;
+}
+
+/* when you apply display: flex to an inline element, it becomes a block-level container. */
+
+.delivered-text {
+  font-size: 1.8rem;
+  /* this size is for visual hirearchy since the hero-description is 2 rem. */
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
+
+/****************************/
+/* FEATURED IN SECTION */
+/****************************/
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+  /* here we are using half the padding we use for the other sections that is 9.6rem */
+}
+
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  /* we are trying to make it similar to the "subheading" span element from the how it works section, the difference being we are just making this even a bit smaller.*/
+  margin-bottom: 2.4rem;
+  text-align: center;
+  color: #999;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logos img {
+  height: 3.2rem;
+  /* we are using height here to adjust the size here since it is more natural  */
+
+  filter: brightness(0);
+  opacity: 50%;
+}
+
+/****************************/
+/* HOW IT WORKS SECTION */
+/****************************/
+.section-how {
+  padding: 9.6rem 0;
+  background-color: #fff;
+}
+
+.step-img {
+  width: 35%;
+  z-index: 1;
+}
+
+.step-number {
+  font-size: 8.8rem;
+  color: #ddd;
+  font-weight: 600;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.step-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.step-img-box::before {
+  width: 60%;
+  /* height: 60%; this will not work here. so we would rather use paddings bottom which would rather work as hright in turn */
+  padding-bottom: 60%;
+
+  background-color: #fdf2e9;
+  z-index: 0;
+}
+
+.step-img-box::after {
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+}
+
+/****************************/
+/* HOW IT WORKS SECTION */
+/****************************/
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.meal:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+  /* even though it is not a link but we can still use the hover property here. */
+}
+
+.meal-content {
+  padding: 4.8rem;
+  padding-top: 3.2rem;
+}
+
+.meal-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+.tag--vegan {
+  background-color: #94d82d;
+}
+.tag--paleo {
+  background-color: #ffd43b;
+}
+
+.meal-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  /*note we could also use the font-size property to change the size of these icons.*/
+  color: #e67e22;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+/****************************/
+/* TESTIMONIALS SECTION */
+/****************************/
+
+.section-testimonials {
+  padding: 9.6rem 0;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4.8rem;
+}
+
+.testimonial-img {
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  /*this would multiply the font size by 1.8 and that then would be the line height.*/
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #777;
+}
